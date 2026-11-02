@@ -92,6 +92,14 @@ a.as-stat:hover span{color:var(--ink)}
 .area-svcs{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .area-svc-grid{grid-template-columns:repeat(3,1fr);margin-top:26px}
 .area-around{background:var(--paper)}
+.area-sec{background:var(--paper)}
+.area-sec.area-tint{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.area-sec .h-sec{color:var(--ink)}
+.area-sec .eyebrow{color:var(--muted)}
+.area-sec.area-tint .proof-item{background:var(--paper)}
+.area-src{color:var(--muted);font-size:.85rem;margin-top:14px}
+.area-src a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.area-village-chips a.chip{text-decoration:none}
 .area-around-lead{color:var(--muted);max-width:62ch;margin:12px 0 20px}
 .area-village-chips .chip{background:var(--paper-2);border-color:var(--line);color:var(--ink);backdrop-filter:none}
 .area-village-chips .chip svg{color:var(--brand-dp)}
