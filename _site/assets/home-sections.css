@@ -56,6 +56,30 @@ a.as-stat:hover span{color:var(--ink)}
 .rev-grid .rev-body p{display:block;-webkit-line-clamp:unset}
 @media(max-width:960px){.rev-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.rev-grid{grid-template-columns:1fr}}
+.aw-more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--display);font-weight:700;font-size:.9rem;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:2px}
+.aw-more svg{width:15px;height:15px}
+.about-vetted{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-top:22px}
+.about-vetted p{color:var(--muted);margin:12px 0 0}
+.about-vetted .community-label{display:block;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.av-logos{display:flex;align-items:center;gap:18px;margin-top:14px}
+.av-logos img{width:64px;height:64px;object-fit:contain;display:block}
+.aw-schemes{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.aw-schemes .h-sec,.aw-scores .h-sec{color:var(--ink)}
+.aw-schemes .eyebrow,.aw-scores .eyebrow,.aw-schemes .lead{color:var(--muted)}
+.aw-list{display:grid;gap:18px;max-width:980px;margin-top:44px}
+.aw-row{display:grid;grid-template-columns:150px 1fr;gap:34px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px 34px}
+.aw-logo{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:var(--paper-2);border-radius:var(--r)}
+.aw-logo img{width:70%;height:auto;object-fit:contain}
+.aw-row h3{font-family:var(--display);font-size:1.35rem;font-weight:800;text-transform:uppercase;color:var(--ink)}
+.aw-stat{font-family:var(--display);font-weight:700;color:var(--brand-dp);margin:4px 0 10px}
+.aw-row p{color:var(--muted);font-size:.95rem}
+.aw-facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin:14px 0 16px;padding:0}
+.aw-facts li{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:600;color:var(--ink)}
+.aw-facts svg{width:16px;height:16px;flex:none;color:var(--ink)}
+.aw-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:.9rem;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:2px}
+.aw-link svg{width:15px;height:15px}
+.aw-scores .rev-score{margin-top:30px}
+@media(max-width:700px){.aw-row{grid-template-columns:1fr;gap:18px;padding:24px 20px}.aw-logo{width:120px}}
 .area-page{background:var(--paper)}
 .area-page .h-sec,.area-svcs .h-sec,.area-around .h-sec,.hub-towns .h-sec{color:var(--ink)}
 .area-page .eyebrow,.area-svcs .eyebrow,.area-around .eyebrow,.hub-towns .eyebrow{color:var(--muted)}
