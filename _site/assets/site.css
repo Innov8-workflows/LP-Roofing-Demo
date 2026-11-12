@@ -475,6 +475,15 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
   .rev-card{padding:20px 18px 16px}
 }
 @media(max-width:600px){
+
+  .rev-score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:18px}
+  .rev-sc{flex-direction:column;justify-content:flex-start;text-align:center;padding:12px 6px 11px;gap:7px;min-width:0;border-radius:12px}
+  .rev-sc .rev-logo{width:30px;height:30px}
+  .rev-sc .rev-logo svg,.rev-sc .rev-logo img{width:26px;height:26px}
+  .rev-sc b{font-size:1.3rem}
+  .rev-sc b small{font-size:.74rem}
+  .rev-sc span.lbl{font-size:.72rem;line-height:1.25;margin-top:4px}
+  .rev-sc .lbl-x{display:none}
   .gal-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:8px}
   .t-wide{grid-column:span 1}
   .t-wide.t-last{grid-column:span 2}
