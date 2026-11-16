@@ -20,7 +20,18 @@
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
     document.head.appendChild(s);
+    var waiting = queue.slice();
+    queue.length = 0;
+    waiting.forEach(function (ev) { window.gtag('event', ev[0], ev[1]); });
   }
+
+  var queue = [];
+  window.track = function (name, params) {
+    params = params || {};
+    if (!params.page_path) params.page_path = location.pathname;
+    if (window.__lpGa && window.gtag) window.gtag('event', name, params);
+    else if (getChoice() !== 'denied') queue.push([name, params]);
+  };
 
   function clearGaCookies() {
     var host = location.hostname.replace(/^www\./, '');
@@ -37,6 +48,8 @@
   function choose(v) {
     setChoice(v);
     if (banner) banner.hidden = true;
+    document.documentElement.classList.remove('cookie-open');
+    if (v !== 'granted') queue.length = 0;
     if (v === 'granted') { loadGa(); return; }
     window['ga-disable-' + GA4_ID] = true;
     clearGaCookies();
@@ -78,6 +91,7 @@
       document.body.appendChild(banner);
     }
     banner.hidden = false;
+    document.documentElement.classList.add('cookie-open');
   }
 
   if (getChoice() === 'granted') loadGa();
@@ -87,7 +101,7 @@
   document.addEventListener('click', function (e) {
     if (!window.__lpGa || !window.gtag) return;
     var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-    if (!a) return;
+    if (!a || a.hasAttribute('data-quiz-send')) return;
     var h = a.getAttribute('href') || '';
     var name = h.indexOf('tel:') === 0 ? 'contact_call' : /^https:\/\/wa\.me\//.test(h) ? 'contact_whatsapp' : h.indexOf('mailto:') === 0 ? 'contact_email' : '';
     if (name) window.gtag('event', name, { link_url: h, page_path: location.pathname });

@@ -22,11 +22,14 @@
       })['catch'](function () {  });
     } catch (e) {  }
   }
+  window.sendLead = sendLead;
 
   
   function where(el) {
     if (!el || !el.closest) return 'page';
     if (el.closest('.wa-float')) return 'whatsapp button';
+    if (el.closest('.lp-hdr')) return 'header';
+    if (el.closest('.qcard')) return 'quiz';
     if (el.closest('.mobile-menu')) return 'menu';
     if (el.closest('.nav')) return 'nav';
     if (el.closest('.hero, .mini-hero')) return 'hero';
@@ -40,6 +43,8 @@
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
     if (!a) return;
+    
+    if (a.hasAttribute('data-quiz-send')) return;
     var h = a.getAttribute('href') || '';
     if (h.indexOf('tel:') === 0) {
       sendLead({ type: 'Call click', phone: h.slice(4), source: where(a) });
